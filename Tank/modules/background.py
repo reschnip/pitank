@@ -11,6 +11,11 @@ while 1:
     for row in db(db.waterset.id=='1').select():
         tempsett= row.Water_Temperature
     tempset=float(tempsett)
+    text = '';
+    while text.split("\n")[0].find("YES") == -1:
+        tfile = open("/sys/bus/w1/devices/28-00000457b942/w1_slave")
+        text = tfile.read()
+        tfile.close()
     tfile = open("/sys/bus/w1/devices/28-00000457b942/w1_slave")
     text = tfile.read()
     tfile.close()
