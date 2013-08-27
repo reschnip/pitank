@@ -1,0 +1,4 @@
+# coding: utf8
+db = DAL('sqlite://storage.sqlite')
+db.define_table('tempset', Field('tempset'))
+db.define_table('tempset1', Field('tempset1'))

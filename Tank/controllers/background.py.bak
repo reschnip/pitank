@@ -1,0 +1,15 @@
+# coding: utf8
+import time
+
+while 1:
+    tfile = open("/sys/bus/w1/devices/28-00000457b942/w1_slave")
+    text = tfile.read()
+    tfile.close()   
+    secondline = text.split("\n")[1]
+    temperaturedata = secondline.split(" ")[9]
+    temperature = float(temperaturedata[2:])
+    temperature = temperature / 1000.0
+    temp = round(temperature, 1)
+    row = db(db.wtemp.id==1).select().first()
+    row.update_record(wtemp=temp)
+    time.sleep(1)

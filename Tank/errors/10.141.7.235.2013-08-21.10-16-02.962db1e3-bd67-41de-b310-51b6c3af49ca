@@ -1,0 +1,664 @@
+(dp1
+S'output'
+p2
+S"<class 'sqlite3.OperationalError'> database is locked"
+p3
+sS'layer'
+p4
+S'/home/pi/web2py/applications/Tank/controllers/default.py'
+p5
+sS'code'
+p6
+S"# -*- coding: utf-8 -*-\nimport smbus\nfrom gluon.tools import Crud\ncrud = Crud(db)\n### required - do no delete\ndef user(): return dict(form=auth())\ndef download(): return response.download(request,db)\ndef call():\n    session.forget()\n    return service()\n### end requires\ndef index():\n    return dict()\n    \ndef error():\n    return dict()\n    \ndef graphs():\n    return dict()\n    \ndef config():\n   return dict(form=crud.update(db.waterset, 1, deletable=False)\n   , form1=crud.update(db.tempset1, 1, deletable=False ))\n    \ndef tempset():\n    for row in db(db.waterset.id=='1').select():\n        tempset= row.Water_Temperature\n    return tempset\n    \ndef tempset1():\n    for row in db(db.tempset1.id=='1').select():\n        tempset1= row.Light_Temperature\n    return tempset1\n    \ndef temp():\n    for row in db(db.wtemp.id=='1').select():\n        temp= row.wtemp  \n    return temp\n    \ndef temp1():\n    bus = smbus.SMBus(1)\n    address = 0x48\n    temp1 = bus.read_byte_data(address, 0)\n    temp1 = round(temp1, 1)\n    return temp1\n    \ndef heat():\n    for row in db(db.heat.id=='1').select():\n        heat= row.heat \n    return heat\n\nresponse._vars=response._caller(config)\n"
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__module__'
+p12
+S"'sqlite3'"
+p13
+sS'__getslice__'
+p14
+S"<method-wrapper '__getslice__' of OperationalError object>"
+p15
+sS'__str__'
+p16
+S"<method-wrapper '__str__' of OperationalError object>"
+p17
+sS'__reduce__'
+p18
+S'<built-in method __reduce__ of OperationalError object>'
+p19
+sS'__dict__'
+p20
+S'{}'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of OperationalError object>'
+p23
+sS'__weakref__'
+p24
+S'None'
+p25
+sS'__init__'
+p26
+S"<method-wrapper '__init__' of OperationalError object>"
+p27
+sS'__setattr__'
+p28
+S"<method-wrapper '__setattr__' of OperationalError object>"
+p29
+sS'__reduce_ex__'
+p30
+S'<built-in method __reduce_ex__ of OperationalError object>'
+p31
+sS'__new__'
+p32
+S'<built-in method __new__ of type object>'
+p33
+sS'__format__'
+p34
+S'<built-in method __format__ of OperationalError object>'
+p35
+sS'__class__'
+p36
+S"<class 'sqlite3.OperationalError'>"
+p37
+sS'__doc__'
+p38
+S'None'
+p39
+sS'__getitem__'
+p40
+S"<method-wrapper '__getitem__' of OperationalError object>"
+p41
+sS'__setstate__'
+p42
+S'<built-in method __setstate__ of OperationalError object>'
+p43
+sS'__getattribute__'
+p44
+S"<method-wrapper '__getattribute__' of OperationalError object>"
+p45
+sS'args'
+p46
+S"('database is locked',)"
+p47
+sS'__subclasshook__'
+p48
+S'<built-in method __subclasshook__ of type object>'
+p49
+sS'__unicode__'
+p50
+S'<built-in method __unicode__ of OperationalError object>'
+p51
+sS'__delattr__'
+p52
+S"<method-wrapper '__delattr__' of OperationalError object>"
+p53
+sS'__repr__'
+p54
+S"<method-wrapper '__repr__' of OperationalError object>"
+p55
+sS'__hash__'
+p56
+S"<method-wrapper '__hash__' of OperationalError object>"
+p57
+ssS'evalue'
+p58
+S'database is locked'
+p59
+sS'request'
+p60
+cgluon.html
+XML_unpickle
+p61
+(S's;V\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">ajax</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">application</td><td valign="top">:</td><td><div>Tank</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;fdopen&gt;&#x27;, mode &#x27;w+b&#x27; at 0xad01cc28&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cid</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">client</td><td valign="top">:</td><td><div>10.141.7.235</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">controller</td><td valign="top">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_tank</td><td valign="top">:</td><td><div>10.141.7.235-8246745d-9788-43b3-94f8-475c6e79b10c<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">env</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/pi/web2py/applications/admin/&#x27;, &#x27;/home/pi/web2py/applications/welcome/&#x27;, &#x27;/home/pi/web2py/applications/Tank/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/pi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x1ff3788: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;127.0.1.1&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;raspberrypi&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: True, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/pi/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;import_models&#x27;: False, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;minthreads&#x27;: None, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">content_length</td><td valign="top">:</td><td><div>567</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">content_type</td><td valign="top">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundaryUSQkuf2CAsrhhzx4</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/pi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_encoding</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_language</td><td valign="top">:</td><td><div>en-GB,en-US;q=0.8,en;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_cache_control</td><td valign="top">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_connection</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_content_length</td><td valign="top">:</td><td><div>567</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_content_type</td><td valign="top">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundaryUSQkuf2CAsrhhzx4</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_cookie</td><td valign="top">:</td><td><div>session_id_tank=10.141.7.235-8246745d-9788-43b3-94f8-475c6e79b10c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_host</td><td valign="top">:</td><td><div>84.92.45.133</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_origin</td><td valign="top">:</td><td><div>http://84.92.45.133</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_referer</td><td valign="top">:</td><td><div>http://84.92.45.133/Tank/default/config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_user_agent</td><td valign="top">:</td><td><div>Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_via</td><td valign="top">:</td><td><div>1.1 hero.emis.local (squid/3.1.6)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_x_forwarded_for</td><td valign="top">:</td><td><div>10.141.7.235</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>raspberrypi</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path_info</td><td valign="top">:</td><td><div>/Tank/default/config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">query_string</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_addr</td><td valign="top">:</td><td><div>195.59.155.227</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_port</td><td valign="top">:</td><td><div>39357</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_method</td><td valign="top">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_uri</td><td valign="top">:</td><td><div>/Tank/default/config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">script_name</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_name</td><td valign="top">:</td><td><div>raspberrypi</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_port</td><td valign="top">:</td><td><div>80</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_protocol</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_software</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_crontype</td><td valign="top">:</td><td><div>hard</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_path</td><td valign="top">:</td><td><div>/home/pi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div>2.5.1-stable+timestamp.2013.06.06.15.39.19</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0xb6d340d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x1f9c500&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_input</td><td valign="top">:</td><td><div>&lt;socket._fileobject object at 0x25f3cf0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_version</td><td valign="top">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">extension</td><td valign="top">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">folder</td><td valign="top">:</td><td><div>/home/pi/web2py/applications/Tank/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">function</td><td valign="top">:</td><td><div>config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">get_vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">global_settings</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/pi/web2py/applications/admin/&#x27;, &#x27;/home/pi/web2py/applications/welcome/&#x27;, &#x27;/home/pi/web2py/applications/Tank/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/pi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x1ff3788: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;127.0.1.1&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;raspberrypi&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: True, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/pi/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;import_models&#x27;: False, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;minthreads&#x27;: None, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/pi/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>raspberrypi</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_crontype</td><td valign="top">:</td><td><div>hard</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div>2.5.1-stable+timestamp.2013.06.06.15.39.19</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_https</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_local</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_restful</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">now</td><td valign="top">:</td><td><div>datetime.datetime(2013, 8, 21, 10, 16, 2, 325916)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">post_vars</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">Water_Temperature</td><td valign="top">:</td><td><div>28.5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">id</td><td valign="top">:</td><td><div>1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_args</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_extension</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">url</td><td valign="top">:</td><td><div>/Tank/default/config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">utcnow</td><td valign="top">:</td><td><div>datetime.datetime(2013, 8, 21, 10, 16, 2, 326065)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uuid</td><td valign="top">:</td><td><div>Tank/10.141.7.235.2013-08-21.10-16-02.962db1e3-bd67-41de-b310-51b6c3af49ca</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">vars</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">Water_Temperature</td><td valign="top">:</td><td><div>28.5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">id</td><td valign="top">:</td><td><div>1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">environ</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">CONTENT_LENGTH</td><td valign="top">:</td><td><div>567</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">CONTENT_TYPE</td><td valign="top">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundaryUSQkuf2CAsrhhzx4</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_ENCODING</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_LANGUAGE</td><td valign="top">:</td><td><div>en-GB,en-US;q=0.8,en;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CACHE_CONTROL</td><td valign="top">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CONNECTION</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CONTENT_LENGTH</td><td valign="top">:</td><td><div>567</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CONTENT_TYPE</td><td valign="top">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundaryUSQkuf2CAsrhhzx4</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_COOKIE</td><td valign="top">:</td><td><div>session_id_tank=10.141.7.235-8246745d-9788-43b3-94f8-475c6e79b10c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_HOST</td><td valign="top">:</td><td><div>84.92.45.133</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ORIGIN</td><td valign="top">:</td><td><div>http://84.92.45.133</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_REFERER</td><td valign="top">:</td><td><div>http://84.92.45.133/Tank/default/config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_USER_AGENT</td><td valign="top">:</td><td><div>Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_VIA</td><td valign="top">:</td><td><div>1.1 hero.emis.local (squid/3.1.6)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_X_FORWARDED_FOR</td><td valign="top">:</td><td><div>10.141.7.235</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">PATH_INFO</td><td valign="top">:</td><td><div>/Tank/default/config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">QUERY_STRING</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_ADDR</td><td valign="top">:</td><td><div>195.59.155.227</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_PORT</td><td valign="top">:</td><td><div>39357</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_METHOD</td><td valign="top">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_URI</td><td valign="top">:</td><td><div>/Tank/default/config</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SCRIPT_NAME</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_NAME</td><td valign="top">:</td><td><div>raspberrypi</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PORT</td><td valign="top">:</td><td><div>80</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PROTOCOL</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_SOFTWARE</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0xb6d340d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x1f9c500&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.input</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;fdopen&gt;&#x27;, mode &#x27;w+b&#x27; at 0xad01cc28&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.version</td><td valign="top">:</td><td><div>1</div></td></tr></table></div></td></tr></table></div></td></tr></table></div>'
+tRp62
+sS'frames'
+p63
+(lp64
+(dp65
+S'file'
+p66
+S'/home/pi/web2py/gluon/restricted.py'
+p67
+sS'dump'
+p68
+(dp69
+S'environment'
+p70
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, 'CENTER': <class 'gluon.html.CENTER'>, ...}"
+p71
+sS'ccode'
+p72
+S'<code object <module> at 0x3a0d3c8, file "/home/...pplications/Tank/controllers/default.py", line 2>'
+p73
+ssS'lnum'
+p74
+I212
+sS'lines'
+p75
+(dp76
+I207
+S'    try:'
+p77
+sI208
+S'        if isinstance(code, types.CodeType):'
+p78
+sI209
+S'            ccode = code'
+p79
+sI210
+S'        else:'
+p80
+sI211
+S'            ccode = compile2(code, layer)'
+p81
+sI212
+S'        exec ccode in environment'
+p82
+sI213
+S'    except HTTP:'
+p83
+sI214
+S'        raise'
+p84
+sI215
+S'    except RestrictedError:'
+p85
+sI216
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p86
+ssS'call'
+p87
+S"(code='# -*- coding: utf-8 -*-\\nimport smbus\\nfrom gluon....rn heat\\n\\nresponse._vars=response._caller(config)\\n', environment={'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, 'CENTER': <class 'gluon.html.CENTER'>, ...}, layer='/home/pi/web2py/applications/Tank/controllers/default.py')"
+p88
+sS'func'
+p89
+S'restricted'
+p90
+sa(dp91
+g66
+S'/home/pi/web2py/applications/Tank/controllers/default.py'
+p92
+sg68
+(dp93
+sg74
+I52
+sg75
+(dp94
+I41
+S'    bus = smbus.SMBus(1)'
+p95
+sI42
+S'    address = 0x48'
+p96
+sI43
+S'    temp1 = bus.read_byte_data(address, 0)'
+p97
+sI44
+S'    temp1 = round(temp1, 1)'
+p98
+sI45
+S'    return temp1'
+p99
+sI46
+S''
+sI47
+S'def heat():'
+p100
+sI48
+S"    for row in db(db.heat.id=='1').select():"
+p101
+sI49
+S'        heat= row.heat'
+p102
+sI50
+S'    return heat'
+p103
+ssg87
+S'()'
+p104
+sg89
+S'<module>'
+p105
+sa(dp106
+g66
+S'/home/pi/web2py/gluon/globals.py'
+p107
+sg68
+(dp108
+S'self'
+p109
+S'undefined'
+p110
+sS'f'
+S'<function config>'
+p111
+ssg74
+I194
+sg75
+(dp112
+I192
+S"        self.delimiters = ('{{', '}}')"
+p113
+sI193
+S'        self._vars = None'
+p114
+sI194
+S'        self._caller = lambda f: f()'
+p115
+sI195
+S'        self._view_environment = None'
+p116
+sI196
+S'        self._custom_commit = None'
+p117
+sI197
+S'        self._custom_rollback = None'
+p118
+sI198
+S''
+sI189
+S'        self.menu = []             # used by the default view layout'
+p119
+sI190
+S'        self.files = []            # used by web2py_ajax.html'
+p120
+sI191
+S'        self.generic_patterns = []  # patterns to allow generic views'
+p121
+ssg87
+S'(f=<function config>)'
+p122
+sg89
+S'<lambda>'
+p123
+sa(dp124
+g66
+S'/home/pi/web2py/applications/Tank/controllers/default.py'
+p125
+sg68
+(dp126
+S'global crud'
+p127
+S'<gluon.tools.Crud object>'
+p128
+sS'db.tempset1'
+p129
+S'<Table tempset1 (id,Light_Temperature)>'
+p130
+sS'crud.update'
+p131
+S'<bound method Crud.update of <gluon.tools.Crud object>>'
+p132
+sS'builtinFalse'
+p133
+S'False'
+p134
+sS'form'
+p135
+g110
+sS'db.waterset'
+p136
+S'<Table waterset (id,Water_Temperature)>'
+p137
+sS'form1'
+p138
+g110
+sS'deletable'
+p139
+g110
+sS'global db'
+p140
+S'<DAL uri="sqlite://storage.sqlite">'
+p141
+sS'builtindict'
+p142
+S"<type 'dict'>"
+p143
+ssg74
+I22
+sg75
+(dp144
+I17
+S''
+sI18
+S'def graphs():'
+p145
+sI19
+S'    return dict()'
+p146
+sI20
+S''
+sI21
+S'def config():'
+p147
+sI22
+S'   return dict(form=crud.update(db.waterset, 1, deletable=False)'
+p148
+sI23
+S'   , form1=crud.update(db.tempset1, 1, deletable=False ))'
+p149
+sI24
+S''
+sI25
+S'def tempset():'
+p150
+sI26
+S"    for row in db(db.waterset.id=='1').select():"
+p151
+ssg87
+S'()'
+p152
+sg89
+S'config'
+p153
+sa(dp154
+g66
+S'/home/pi/web2py/gluon/tools.py'
+p155
+sg68
+(dp156
+S'detect_record_change'
+p157
+g110
+sS'self'
+p158
+S'<gluon.tools.Crud object>'
+p159
+sS'self.settings'
+p160
+S"<Storage {'showid': False, 'delete_onaccept': <S...ble': True, 'create_onvalidation': <Storage {}>}>"
+p161
+sS'self.settings.detect_record_change'
+p162
+S'True'
+p163
+ssg74
+I3668
+sg75
+(dp164
+I3663
+S'        if isinstance(onvalidation, StorageList):'
+p165
+sI3664
+S'            onvalidation = onvalidation.get(table._tablename, [])'
+p166
+sI3665
+S'        if form.accepts(request, _session, formname=_formname,'
+p167
+sI3666
+S'                        onvalidation=onvalidation, keepvalues=keepvalues,'
+p168
+sI3667
+S'                        hideerror=self.settings.hideerror,'
+p169
+sI3668
+S'                        detect_record_change=self.settings.detect_record_change):'
+p170
+sI3669
+S'            self.accepted = True'
+p171
+sI3670
+S'            response.flash = message'
+p172
+sI3671
+S'            if log:'
+p173
+sI3672
+S'                self.log_event(log, form.vars)'
+p174
+ssg87
+S"(self=<gluon.tools.Crud object>, table=<Table waterset (id,Water_Temperature)>, record=1, next=None, onvalidation=[], onaccept=<Storage {}>, ondelete=<Storage {}>, log='Record %(id)s updated', message='Record Updated', deletable=False, formname=<function <lambda>>, **attributes={'hidden': {'_next': None, 'id': 1L}})"
+p175
+sg89
+S'update'
+p176
+sa(dp177
+g66
+S'/home/pi/web2py/gluon/sqlhtml.py'
+p178
+sg68
+(dp179
+S').update'
+p180
+g110
+sS'self'
+p181
+S'<gluon.sqlhtml.SQLFORM object>'
+p182
+sS'self.id_field_name'
+p183
+S"'id'"
+p184
+sS'fields'
+p185
+S"{'Water_Temperature': '28.5'}"
+p186
+ssg74
+I1569
+sg75
+(dp187
+I1568
+S'                        self.table._db(self.table._id == self.record['
+p188
+sI1569
+S'                                       self.id_field_name]).update(**fields)'
+p189
+sI1570
+S'                else:'
+p190
+sI1571
+S'                    self.vars.id = self.table.insert(**fields)'
+p191
+sI1572
+S'        self.accepted = ret'
+p192
+sI1573
+S'        return ret'
+p193
+sI1564
+S'            else:'
+p194
+sI1565
+S'                if record_id:'
+p195
+sI1566
+S'                    self.vars.id = self.record[self.id_field_name]'
+p196
+sI1567
+S'                    if fields:'
+p197
+ssg87
+S"(self=<gluon.sqlhtml.SQLFORM object>, request_vars=<Storage {'id': '1', '_formkey': 'b52b0978bca6c6...ame': 'waterset/1', 'Water_Temperature': '28.5'}>, session=<Storage {'_user_agent': {'os': {'version': 'NT ...aterset/1]': 'b52b0978bca6c6eb63d06ee6d5e4d76f'}>, formname='waterset/1', keepvalues=True, onvalidation=[], dbio=True, hideerror=False, detect_record_change=True, **kwargs={})"
+p198
+sg89
+S'accepts'
+p199
+sa(dp200
+g66
+S'/home/pi/web2py/gluon/dal.py'
+p201
+sg68
+(dp202
+S'self.query'
+p203
+S'<Query (waterset.id = 1)>'
+p204
+sS'db._adapter'
+p205
+S'<gluon.dal.SQLiteAdapter object>'
+p206
+sS'db'
+p207
+S'<DAL uri="sqlite://storage.sqlite">'
+p208
+sS'self'
+p209
+S'<Set (waterset.id = 1)>'
+p210
+sS'tablename'
+p211
+S"'waterset'"
+p212
+sS'ret'
+p213
+g110
+sS'fields'
+p214
+S"[(<gluon.dal.Field object>, '28.5')]"
+p215
+sS'db._adapter.update'
+p216
+S'<bound method SQLiteAdapter.update of <gluon.dal.SQLiteAdapter object>>'
+p217
+ssg74
+I9982
+sg75
+(dp218
+I9984
+S'        return ret'
+p219
+sI9985
+S''
+sI9986
+S'    def update_naive(self, **update_fields):'
+p220
+sI9977
+S'        if any(f(self,update_fields) for f in table._before_update):'
+p221
+sI9978
+S'            return 0'
+p222
+sI9979
+S'        fields = table._listify(update_fields,update=True)'
+p223
+sI9980
+S'        if not fields:'
+p224
+sI9981
+S'            raise SyntaxError("No fields to update")'
+p225
+sI9982
+S'        ret = db._adapter.update(tablename,self.query,fields)'
+p226
+sI9983
+S'        ret and [f(self,update_fields) for f in table._after_update]'
+p227
+ssg87
+S"(self=<Set (waterset.id = 1)>, **update_fields={'Water_Temperature': '28.5'})"
+p228
+sg89
+g176
+sa(dp229
+g66
+S'/home/pi/web2py/gluon/dal.py'
+p230
+sg68
+(dp231
+S'e'
+S"OperationalError('database is locked',)"
+p232
+ssg74
+I1452
+sg75
+(dp233
+I1447
+S'        except Exception:'
+p234
+sI1448
+S'            e = sys.exc_info()[1]'
+p235
+sI1449
+S'            table = self.db[tablename]'
+p236
+sI1450
+S"            if hasattr(table,'_on_update_error'):"
+p237
+sI1451
+S'                return table._on_update_error(table,query,fields,e)'
+p238
+sI1452
+S'            raise e'
+p239
+sI1453
+S'        try:'
+p240
+sI1454
+S'            return self.cursor.rowcount'
+p241
+sI1455
+S'        except:'
+p242
+sI1456
+S'            return None'
+p243
+ssg87
+S"(self=<gluon.dal.SQLiteAdapter object>, tablename='waterset', query=<Query (waterset.id = 1)>, fields=[(<gluon.dal.Field object>, '28.5')])"
+p244
+sg89
+g176
+sasS'pyver'
+p245
+S'Python 2.7.3: /usr/bin/python (prefix: /usr)'
+p246
+sS'session'
+p247
+g61
+(S's\x1a\x00\x00\x00<div><table></table></div>'
+tRp248
+sS'etype'
+p249
+S"<class 'sqlite3.OperationalError'>"
+p250
+sS'date'
+p251
+S'Wed Aug 21 10:16:08 2013'
+p252
+sS'response'
+p253
+g61
+(S's\x83\x16\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x3693540&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_tank</td><td valign="top">:</td><td><div>10.141.7.235-8246745d-9788-43b3-94f8-475c6e79b10c<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">delimiters</td><td valign="top">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">files</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">flash</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">generic_patterns</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">headers</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">X-Powered-By</td><td valign="top">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">menu</td><td valign="top">:</td><td><div><table><tr><td><div><table><tr><td><div>Overview</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/Tank/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Graphs</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/Tank/default/graphs</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Configuration</div></td></tr><tr><td><div>True</div></td></tr><tr><td><div>/Tank/default/config</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">meta</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">author</td><td valign="top">:</td><td><div>you &lt;you@example.com&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">description</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">keywords</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">models_to_run</td><td valign="top">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/config/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">postprocessing</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_cookie_expires</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_data_name</td><td valign="top">:</td><td><div>session_data_tank</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_file</td><td valign="top">:</td><td><div>&lt;open file &#x27;/home/pi/web2py/applications/Tank/sessions/10.141.7.235-8246745d-9788-43b3-94f8-475c6e79b10c&#x27;, mode &#x27;rb+&#x27; at 0xad01cac8&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_filename</td><td valign="top">:</td><td><div>/home/pi/web2py/applications/Tank/sessions/10.141.7.235-8246745d-9788-43b3-94f8-475c6e79b10c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id</td><td valign="top">:</td><td><div>10.141.7.235-8246745d-9788-43b3-94f8-475c6e79b10c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_name</td><td valign="top">:</td><td><div>session_id_tank</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_locked</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_new</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_storage_type</td><td valign="top">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">status</td><td valign="top">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">subtitle</td><td valign="top">:</td><td><div>powered by web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">title</td><td valign="top">:</td><td><div>My New App</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">view</td><td valign="top">:</td><td><div>default/config.html</div></td></tr></table></div>'
+tRp254
+sS'locals'
+p255
+(dp256
+S'e'
+S"OperationalError('database is locked',)"
+p257
+sS'fields'
+p258
+S"[(<gluon.dal.Field object>, '28.5')]"
+p259
+sS'self'
+p260
+S'<gluon.dal.SQLiteAdapter object>'
+p261
+sS'tablename'
+p262
+S"'waterset'"
+p263
+sS'sql'
+p264
+S'"UPDATE waterset SET Water_Temperature=\'28.5\' WHERE (waterset.id = 1);"'
+p265
+sS'query'
+p266
+S'<Query (waterset.id = 1)>'
+p267
+sS'table'
+p268
+S'<Table waterset (id,Water_Temperature)>'
+p269
+sssS'traceback'
+p270
+S'Traceback (most recent call last):\n  File "/home/pi/web2py/gluon/restricted.py", line 212, in restricted\n    exec ccode in environment\n  File "/home/pi/web2py/applications/Tank/controllers/default.py", line 52, in <module>\n  File "/home/pi/web2py/gluon/globals.py", line 194, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/pi/web2py/applications/Tank/controllers/default.py", line 22, in config\n    return dict(form=crud.update(db.waterset, 1, deletable=False)\n  File "/home/pi/web2py/gluon/tools.py", line 3668, in update\n    detect_record_change=self.settings.detect_record_change):\n  File "/home/pi/web2py/gluon/sqlhtml.py", line 1569, in accepts\n    self.id_field_name]).update(**fields)\n  File "/home/pi/web2py/gluon/dal.py", line 9982, in update\n    ret = db._adapter.update(tablename,self.query,fields)\n  File "/home/pi/web2py/gluon/dal.py", line 1452, in update\n    raise e\nOperationalError: database is locked\n'
+p271
+s.

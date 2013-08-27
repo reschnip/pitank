@@ -1,0 +1,37 @@
+{{extend 'layout.html'}}
+<script language="javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function Load()
+{
+      $('#temp').load('temp.load').hide(0).fadeIn(0);
+      $('#temp1').load('temp1.load').hide(0).fadeIn(0);
+      $('#tempset').load('tempset.load').hide(0).fadeIn(0);
+      $('#tempset1').load('tempset1.load').hide(0).fadeIn(0);
+      $('#heat').load('heat.load').hide(0).fadeIn(0);
+}
+setInterval('Load()', 1000);
+</script>
+<H2> <div style="position:absolute; left:900px; top:000px"> <img src="http://i291.photobucket.com/albums/ll320/zedely666/linkies/Blinky_Art.gif~original"></div> 
+     <div style="position:absolute; left:100px; top:200px"> Water Temperature </div></H2><H3>
+<div>
+    <div style="position:absolute; left:100px; top:250px">Current:</div>
+    <div id="temp" style="position:absolute; left:205px; top:250px">
+    {{=LOAD('default','temp.load',ajax=True)}}</div>
+    <div style="position:absolute; left:310px; top:250px">Set:</div>
+    <div id="tempset" style="position:absolute; left:365px; top:250px"> {{=LOAD('default','tempset.load',ajax=True)}}</div>
+    <div style="position:absolute; left:470px; top:250px">Heater:</div>
+    <div id="heat" style="position:absolute; left:565px; top:250px"> {{=LOAD('default','heat.load',ajax=True)}}</div>
+ </div>
+
+		<BR><BR><BR><BR><BR><BR>
+</H3><H2> <div style="position:absolute; left:100px; top:350px"> Light Temperature </div> </H2><H3>
+<div>
+ <div style="position:absolute; left:100px; top:400px">Current:</div>
+ <div id="temp1" style="position:absolute; left:205px; top:400px">
+ {{=LOAD('default','temp1.load',ajax=True)}}</div>
+    <div style="position:absolute; left:310px; top:400px">Set:</div>
+    <div id="tempset1" style="position:absolute; left:365px; top:400px">
+    {{=LOAD('default','tempset1.load',ajax=True)}}</div>
+ </div>
+</H3>

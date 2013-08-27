@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+ 
+def main():
+    sensmaintemp = "/sys/bus/w1/devices/28-00000457b942/w1_slave" #inside sensor
+ 
+    def currtemp():
+        while(1):
+            tfile = open(sensmaintemp)
+            text = tfile.read()
+            tfile.close()
+            firstline  = text.split("\n")[0]
+            crc_check = text.split("crc=")[1]
+            crc_check = crc_check.split(" ")[1]
+            if crc_check.find("YES")>=0:
+                break
+        secondline = text.split("\n")[1]
+        temperaturedata = secondline.split(" ")[9]
+        temperature = float(temperaturedata[2:])
+        temperature = temperature / 1000.0
+        temperature = round(temperature, 0)
+        row = db(db.wtemp.id==1).select().first()
+        row.update_record(wtemp=temperature)
+ 
+    infloop = 1
+    while infloop == 1 :
+       currtemp()
+ 
+if __name__ == '__main__':
+        main()

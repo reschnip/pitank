@@ -1,0 +1,32 @@
+{{extend 'layout.html'}}
+<script language="javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function Load()
+{
+      $('#temp').load('temp.load').hide(0).fadeIn(0);
+      $('#temp1').load('temp1.load').hide(0).fadeIn(0);
+      $('#tempset').load('tempset.load').hide(0).fadeIn(0);
+      $('#tempset1').load('tempset1.load').hide(0).fadeIn(0);
+      $('#heat').load('heat.load').hide(0).fadeIn(0);
+}
+setInterval('Load()', 1000);
+</script>
+<H2> <div style="position:absolute; left:100px; top:200px"> Water Temperature </div> </H2>
+<H3>
+<div>
+    <div id="temp" style="position:absolute; left:100px; top:300px">
+    {{=LOAD('default','temp.load',ajax=True)}}</div>
+    <div id="tempset" style="position:absolute; left:200px; top:300px"> {{=LOAD('default','tempset.load',ajax=True)}}</div>
+    <div id="heat" style="position:absolute; left:300px; top:300px"> {{=LOAD('default','heat.load',ajax=True)}}</div>
+ </div>
+
+		<BR>
+</H3><H2> Light Temperature </H2><H3>
+<div class="row-fluid">
+    <div class="span2"> Current: </div>
+ <div id="temp1" class="span2">{{=LOAD('default','temp1.load',ajax=True)}}</div>
+ <div class="span2"> Set: </div>
+    <div id="tempset1" class="span2">{{=LOAD('default','tempset1.load',ajax=True)}}</div>
+ </div>
+</H3>

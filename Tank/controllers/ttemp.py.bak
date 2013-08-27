@@ -1,0 +1,25 @@
+# coding: utf8
+# try something like
+import pygal
+from pygal.style import CleanStyle
+ 
+def plot_pygal():
+    response.headers['Content-Type']='image/svg+xml'
+    bar_chart = pygal.Bar(style=CleanStyle)                                            # Then create a bar graph object
+    bar_chart.add('Fibonacci', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])  # Add some values    
+ 
+       # Open the file that we viewed earlier so that python can see what is in it. Replace the serial number as before. 
+    tfile = open("/sys/bus/w1/devices/28-00000457b942/w1_slave") 
+    # Read all of the text in the file. 
+    text = tfile.read() 
+    # Close the file now that the text has been read. 
+    tfile.close() 
+    # Split the text with new lines (\n) and select the second line. 
+    secondline = text.split("\n")[1] 
+    # Split the line into words, referring to the spaces, and select the 10th word (counting from 0). 
+    temperaturedata = secondline.split(" ")[9] 
+    # The first two characters are "t=", so get rid of those and convert the temperature from a string to a number. 
+    temperature = float(temperaturedata[2:]) 
+    # Put the decimal point in the right place and display it. 
+    temp = temperature / 1000 
+    return temp, bar_chart.render()
