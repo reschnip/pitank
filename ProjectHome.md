@@ -1,0 +1,1 @@
+This is a Fish tank controller I am building for my Marine Tank. It is currently running on a Raspberry Pi but it would be easy to port it over onto a BeagleBone Black which is something that i plan to do in the near future.
